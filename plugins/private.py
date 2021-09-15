@@ -25,7 +25,7 @@ from config import SUPPORT_GROUP, UPDATES_CHANNEL
 from translations import START_TEXT, HELP_TEXT, ABOUT_TEXT
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
-@Client.on_message(filters.command(["start", f"start@{USERNAME}"]))
+@Client.on_message(filters.command(["vstart", f"start@{USERNAME}"]))
 async def start(client, message):
    buttons = [
             [
@@ -33,7 +33,7 @@ async def start(client, message):
             ],
             [
                 InlineKeyboardButton("📢 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                InlineKeyboardButton("SOURCE 📦", url=f"https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("HELP📦", url=f"https://t.me/TheCozmoBot?start=help"),
             ],
             [
                 InlineKeyboardButton("🤖 ABOUT", callback_data="about"),
@@ -93,7 +93,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("📢 CHANNEL", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                InlineKeyboardButton("SOURCE 📦", url=f"https://github.com/AsmSafone/VideoPlayerBot"),
+                InlineKeyboardButton("HELP 📦", url=f"https://t.me/TheCozmoBot?start=help"),
             ],
             [
                 InlineKeyboardButton("🤖 ABOUT", callback_data="about"),
